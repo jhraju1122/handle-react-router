@@ -10,22 +10,37 @@ import {
 import Header from './assets/components/Header/Header.jsx';
 import Home from './assets/components/Home/Home.jsx';
 import About from './assets/components/About/About.jsx';
+import Users from './assets/components/Users/Users.jsx';
+import Footer from './assets/components/Footer/Footer.jsx';
 
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:  <Header></Header>,
-  },
-  {
-    path: "/home",
     element:   <Home></Home>,
+
+    children: [
+      {
+        path: "/home",
+        element:  <Header></Header>,
+      },
+      {
+        path: "/users",
+        element:  <Users></Users>,
+      },
+     
+      {
+        path: "/about",
+        element:   <About></About>,
+      },
+    ]
   },
   {
-    path: "/about",
-    element:   <About></About>,
-  },
+    path: "/footer",
+    element: <Footer></Footer>,
+  }
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

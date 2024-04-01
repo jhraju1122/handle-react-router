@@ -1,9 +1,14 @@
 import React from 'react';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import { Outlet } from 'react-router-dom';
 
 const Home = () => {
     return (
         <div>
-            <h2>Hellow, I am from Home</h2>
+         <Header></Header>
+         <Outlet></Outlet>
+         <Footer></Footer>
         </div>
     );
 };
